@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { HStack,Image } from '@chakra-ui/react'
 import logo from '../assets/gamelogo.jpg'
 import ColorModeSwitch from './ColorModeSwitch'
