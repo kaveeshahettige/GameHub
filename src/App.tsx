@@ -2,7 +2,8 @@ import {
   Grid,
   GridItem,
   Show,
-  HStack,
+  Box,
+  Flex,
  } from '@chakra-ui/react'
 
  import NavBar from './components/NavBar'
@@ -49,10 +50,12 @@ function App() {
     </Show>
     
     <GridItem area="main">
-      <HStack mb={4} pt={0} pl={1} spacing={3}>
-      <PlatformSelector selectedPlatform={gameQuery.platform} onSelectPlatform={(platform)=>setGameQuery({...gameQuery,platform})}/>
+      <Flex mb={4} pt={0} pl={1} >
+        <Box mr={2}>
+        <PlatformSelector selectedPlatform={gameQuery.platform} onSelectPlatform={(platform)=>setGameQuery({...gameQuery,platform})}/>
+        </Box>
       <SortSelector sortOrder={gameQuery.sortOrder} onSelectSortOrder={(sortOrder)=>setGameQuery({...gameQuery,sortOrder})}/>
-      </HStack>
+      </Flex>
       
       <GameGrid gameQuery={gameQuery}/>
     </GridItem>
