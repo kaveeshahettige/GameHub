@@ -14,9 +14,10 @@ const GameGrid = ({gameQuery}:Props) => {
     const {data,error,isLoading}=useGames(gameQuery);
 
     const skeltons=[1,2,3,4,5,6,7,8,9,10];
+
+    if (error) return <Text>{error}</Text>
   return (
-    <>
-    {error && <Text>{error}</Text>}
+    
     <SimpleGrid columns={{sm:1,md:2,lg:3,xl:4}} p={1} spacing={6}>
       {isLoading && skeltons.map(s=>
       <GameCardContainer key={s}>
@@ -29,7 +30,7 @@ const GameGrid = ({gameQuery}:Props) => {
         </GameCardContainer>
         )}
     </SimpleGrid>
-    </>
+    
   )
 }
 
